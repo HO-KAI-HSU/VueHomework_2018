@@ -1,4 +1,0 @@
-Topic : "Vue Homework" 
-Author : GeorgeHsu
-CreateDate : 2018-01-20
-
