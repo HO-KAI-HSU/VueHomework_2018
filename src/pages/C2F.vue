@@ -2,18 +2,15 @@
   <div class="C2F">
   
     <!-- 1. 直接轉換的結果 -->
-    <h1>{{ toggle ? c : f }}</h1>
-    
-    <!-- 2. 按鈕的結果 -->
-    <h2>{{ clickResult }}</h2>
+    <h1>{{ toggle ? "攝氏 : "+ c :  "華氏 : "+ f }}</h1>
 
-    <!-- 3. 加一個 input，雙向綁定輸入的溫度-->
-    <input type="text" v-model="temp" />
+    <!-- 2. 加一個 input，雙向綁定輸入的溫度-->
+    <span>{{ toggle ? "華氏 : " : "攝氏 : " }}</span><input type="text" v-model="temp" />
     
-    <!-- 4. 轉換按鈕 -->
+    <!-- 3. 轉換按鈕 -->
     <input type="button" @click="tempCompute()" value="計算">
-    
-    <!-- 5. 使用 checkbox 溫度單位轉換 -->
+    <br>
+    <!-- 4. 使用 checkbox 溫度單位轉換 -->
     <input type="checkbox" v-model="toggle" />{{ toggle ? "華氏轉攝氏" : "攝氏轉華氏"  }}
   </div>
 </template>
@@ -46,6 +43,8 @@ export default {
       }else{
         this.clickResult = this.f;
       }
+
+      alert(this.clickResult);
     }
   }
 }

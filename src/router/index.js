@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Hello from '@/components/Hello'
-import C2F from '@/components/C2F'
+import HelloWorld from '@/pages/HelloWorld'
+import Hello from '@/pages/Hello'
+import LearnComponent from '@/pages/LearnComponent'
+import C2F from '@/pages/C2F'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
       path: '/C2F',
       name: 'C2F',
       component: C2F
+    },
+    {
+      path: '/LearnComponent',
+      name: 'LearnComponent',
+      component: LearnComponent
     }
   ]
 })
