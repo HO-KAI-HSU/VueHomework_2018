@@ -1,15 +1,15 @@
 <template>
-    <div class="container">
-        <div class="col-md-4" v-for="item in clist">
-        <h2>{{ item.title }}</h2>
-        <p>{{ item.info }}</p>
-        <p><a class="btn btn-default" href="#" role="button">{{ item.btntext }}</a></p>
-        </div>
+    <div class="container">    
+        <card v-for="pitem in clist" v-bind:citem="pitem"></card>
     </div>
 </template>
 
 <script>
+import card from './card'
 export default {
+  components: {
+    card
+  },
   props: {
     clist : Array  
   },

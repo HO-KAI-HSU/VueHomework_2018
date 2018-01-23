@@ -41,7 +41,7 @@ export const mutations = {
             var item = state.todoList[i];
             if(item.key == obj.key){
                 console.log("Update item key : " + obj.key);
-                state.todoList[i].content = obj.content;
+                item.content = obj.content;
                 break;
             }
         }
@@ -57,11 +57,11 @@ export const mutations = {
             }
         }
     },
-    [types.TOGGLETODO] (state, key) {
+    [types.TOGGLETODO] (state, obj) {
         for (var i in state.todoList){
             var item = state.todoList[i];
-            if(item.key == key){
-                state.todoList[i].done = !state.todoList[i].done;
+            if(item.key == obj.key){
+                item.done = obj.checked;
                 break;
             }
         }

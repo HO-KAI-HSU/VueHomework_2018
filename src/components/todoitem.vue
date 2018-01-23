@@ -1,25 +1,26 @@
 <template>
   <li>
     <div v-if="!IsEditMode">
-      <label>
-        <input type="checkbox" v-bind:checked="item.done" @change="actionToggleTodo( item.key )">
-        {{ item.content }}
-      </label>
+      <customcheckbox v-bind:customitem="todoitem" @actionToggleTodo1="actionToggleTodo"></customcheckbox>
       <button @click="showEditMode">修改</button>
-      <button @click="actionDeleteTodo( item.key )">刪除</button>
+      <button @click="actionDeleteTodo( todoitem.key )">刪除</button>
     </div> 
 
     <div v-if="IsEditMode">
       <label>
-        <input class="edit-input" v-focus="IsEditMode" placeholder="edit Todo..." v-bind:value="item.content" @keyup.enter="actionEdit" @blur="cancelEdit" @keyup.esc="cancelEdit">
+        <input class="edit-input" v-focus="IsEditMode" placeholder="edit Todo..." v-bind:value="todoitem.content" @keyup.enter="actionEdit" @blur="cancelEdit" @keyup.esc="cancelEdit">
       </label>
     </div> 
   </li>
 </template>
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import customcheckbox from './customcheckbox'
 export default {
-  props: ['item'],
+  components: {
+    customcheckbox
+  },
+  props: ['todoitem'],
   data () {
     return {
       IsEditMode: false           
@@ -31,6 +32,7 @@ export default {
     focus (el, { value }, { context }) {
       if (value) {
         context.$nextTick(() => {
+          console.log("aaaa");
           el.focus();
         })
       }
@@ -47,9 +49,9 @@ export default {
     },
     actionEdit(e) {
         const userChange = e.target.value.trim();
-        console.log('userChange', this.item.key, userChange);
+        console.log('userChange', this.todoitem.key, userChange);
         this.actionUpdateTodo({
-            key:this.item.key,
+            key: this.todoitem.key,
             content: userChange
         })
         this.IsEditMode = false;

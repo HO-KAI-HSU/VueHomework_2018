@@ -41,9 +41,9 @@ export const actionDeleteTodo = ({ commit }, key) => {
     commit(types.DELETETODO, key);
 }
 
-export const actionToggleTodo = ({ commit }, key) => {
+export const actionToggleTodo = ({ commit }, obj) => {
     console.log('actionToggleTodo');
-    commit(types.TOGGLETODO, key);
+    commit(types.TOGGLETODO, obj);
 }
 
 

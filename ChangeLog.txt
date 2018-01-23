@@ -33,5 +33,9 @@ Add C2F program
 ====================
 2018-01-23
 
-1.Add TodoList Page and implement CURD function
+1.Add TodoList page and implement CURD function
+====================
+2018-01-23
+
+1.Modify TodoList page with checkbox component 
 ====================
