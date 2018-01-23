@@ -22,3 +22,8 @@ Add C2F program
 3.Import bootstrap
 4.Add component and pages folder
 ====================
+2018-01-23
+
+2.Add Count page
+3.Implement Count page by VUEX
+====================
