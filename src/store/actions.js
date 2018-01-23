@@ -26,4 +26,24 @@ export const actionCountReset = ({ commit }) => {
     commit(types.RESET);
 }
 
+export const actionAddTodo = ({ commit }, todo) => {
+    console.log('actionAddTodo');
+    commit(types.ADDTODO, todo);
+}
+
+export const actionUpdateTodo = ({ commit }, obj) => {
+    console.log('actionUpdateTodo');
+    commit(types.UPDATETODO, obj);
+}
+
+export const actionDeleteTodo = ({ commit }, key) => {
+    console.log('actionDeleteTodo');
+    commit(types.DELETETODO, key);
+}
+
+export const actionToggleTodo = ({ commit }, key) => {
+    console.log('actionToggleTodo');
+    commit(types.TOGGLETODO, key);
+}
+
 
