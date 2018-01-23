@@ -12,6 +12,9 @@ export const mutations = {
     [types.DECREASE] (state, num) {
         state.count -= parseInt(num);
     },
+    [types.MULTIPLICATION] (state, num) {
+        state.count *= parseInt(num);
+    },
     [types.RESET] (state) {
         state.count = 0;
     }

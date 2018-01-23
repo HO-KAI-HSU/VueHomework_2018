@@ -24,6 +24,10 @@ Add C2F program
 ====================
 2018-01-23
 
-2.Add Count page
-3.Implement Count page by VUEX
+1.Add Count page
+2.Implement Count page by VUEX
+====================
+2018-01-23
+
+1.Modify Count page multiplicate function 
 ====================

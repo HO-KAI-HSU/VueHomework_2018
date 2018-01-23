@@ -6,6 +6,7 @@
 
         <button @click="actionIncrease(num)">+{{ num }}</button>
         <button @click="actionDecrease(num)">-{{ num }}</button>
+        <button @click="actionMultiplication(num)">*{{ num }}</button>
 
         <button @click="actionCountReset()">歸零</button>
     </div>
@@ -25,6 +26,7 @@ export default {
   methods: mapActions([
       'actionIncrease',
       'actionDecrease',
+      'actionMultiplication',
       'actionCountReset'
   ])
 }

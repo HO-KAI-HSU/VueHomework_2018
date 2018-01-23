@@ -16,6 +16,11 @@ export const actionDecrease = ({ commit }, num) => {
     commit(types.DECREASE, num);
 }
 
+export const actionMultiplication = ({ commit }, num) => {
+    console.log('actionMultiplication');
+    commit(types.MULTIPLICATION, num);
+}
+
 export const actionCountReset = ({ commit }) => {
     console.log('actionCountReset');
     commit(types.RESET);
