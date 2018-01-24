@@ -9,8 +9,24 @@ export const state = {
         { key: 2, content: 'vue-router 2.0', done: false },
         { key: 3, content: 'vue-resource 2.0', done: false },
         { key: 4, content: 'webpack', done: false }
-    ]
-    
+    ],
+    learnList: [
+        {
+            title: 'Heading',
+            info: 'Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ',
+            btntext: 'View details »'
+        },
+        {
+            title: 'Heading',
+            info: 'Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ',
+            btntext: 'View details »'
+        },
+        {
+            title: 'Heading',
+            info: 'Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
+            btntext: 'View details »'
+        } 
+    ]   
 }
 
 let todoKey = state.todoList.length;

@@ -17,11 +17,12 @@
 	  <jumbotron></jumbotron>
 
     <!-- 3.3  -->
-    <container v-bind:clist="plist"></container>
+    <container v-bind:clist="learnList"></container>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 // 1. 引用 component
 import navbar from '../components/navbar.vue'
 import container from '../components/container.vue'
@@ -36,25 +37,11 @@ export default {
   },
   data () {
     return {
-      plist: [
-        {
-            title: 'Heading',
-            info: 'Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ',
-            btntext: 'View details »'
-        },
-        {
-            title: 'Heading',
-            info: 'Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. ',
-            btntext: 'View details »'
-        },
-        {
-            title: 'Heading',
-            info: 'Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
-            btntext: 'View details »'
-        } 
-      ]
     }
-  }
+  },
+  computed: mapGetters({
+      learnList: 'getLearnList'
+  })
 }
 </script>
 

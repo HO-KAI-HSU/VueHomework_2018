@@ -39,3 +39,7 @@ Add C2F program
 
 1.Modify TodoList page with checkbox component 
 ====================
+2018-01-24
+
+Modify LearnComponent page by component method
+====================

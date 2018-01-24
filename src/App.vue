@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-link :to="{name: 'Hello'}">Hello</router-link>
     <router-link :to="{name: 'C2F'}">C2F</router-link>
     <router-link :to="{name: 'LearnComponent'}">LearnComponent</router-link>
