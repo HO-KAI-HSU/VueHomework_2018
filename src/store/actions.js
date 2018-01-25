@@ -44,6 +44,21 @@ export const actionDeleteTodo = ({ commit }, key) => {
 export const actionToggleTodo = ({ commit }, obj) => {
     console.log('actionToggleTodo');
     commit(types.TOGGLETODO, obj);
+},
+
+export const actionLogin = ({ commit }, { email, password }) => {
+    console.log("actionLogin");
+    commit(types.LOADING, type);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (email === 'vue@foxconn.com' && password === 'foxconn') {
+                console.log('Promise resolve');
+                commit(types.LOADING, false);
+                resolve();
+            }else{
+                commit(types.LOADING, false);
+                reject();
+            }
+        }, 1500);
+    })
 }
-
-

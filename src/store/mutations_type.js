@@ -7,3 +7,5 @@ export const ADDTODO = 'ADDTODO';
 export const UPDATETODO = 'UPDATETODO';
 export const TOGGLETODO = 'TOGGLETODO';
 export const DELETETODO = 'DELETETODO';
+
+export const LOADING = 'LOADING';
