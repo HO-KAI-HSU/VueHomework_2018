@@ -1,6 +1,5 @@
 import * as types from './mutations_type'
 import Vue from 'vue'
-
 export const state = {
     count : 0,
     todoList: [
@@ -28,7 +27,54 @@ export const state = {
         } 
     ],
     isloading : false,
-    token: ''
+    token: '',
+    productList: [
+        {
+            key: 0,
+            title: 'IPhone8(Gold)64G',
+            impage: '../assets/iphone_8.jpg',
+            left:  2,
+            price: 23990,
+        },
+        {
+            key: 1,
+            title: 'IPhoneX(Black)256G',
+            impage: '',
+            left:  1,
+            price: 38900,
+
+        },
+        {
+            key: 2,
+            title: 'HTC-Ultra 64G',
+            impage: '',
+            left:  3,
+            price: 9990,
+        },
+        {
+            key: 3,
+            title: 'HTC-U11 EYES 64G',
+            impage: '',
+            left:  4,
+            price: 14900,
+        },
+        {
+            key: 4,
+            title: 'Sony XPERIA XZs 64G',
+            impage: '',
+            left:  1,
+            price: 12900,
+        },     
+        {
+            key: 5,
+            title: 'HTC-U11 Plus(Black)64G',
+            impage: '',
+            left:  1,
+            price: 19900,
+        }   
+    ],
+    shoppingcartList: [],
+    shoppingcartTotal : 0
 }
 
 let todoKey = state.todoList.length;
@@ -86,6 +132,38 @@ export const mutations = {
             var item = state.todoList[i];
             if(item.key == obj.key){
                 item.done = obj.checked;
+                break;
+            }
+        }
+    },
+    [types.ADDCART] (state, key) {
+        for (var i in state.productList){
+            var item = state.productList[i];
+            if(item.key == key){
+                state.shoppingcartList.push({
+                    key: item.key,
+                    title: item.title,
+                    price: item.price
+                });
+                item.left = item.left - 1;
+                state.shoppingcartTotal = state.shoppingcartTotal + item.price;
+                break;
+            }
+        }
+    },
+    [types.CANCELCART] (state, key) {
+        for (var i in state.shoppingcartList){
+            var sitem = state.shoppingcartList[i];
+            if(sitem.key == key){
+                state.shoppingcartList.splice(i, 1);
+                state.shoppingcartTotal = state.shoppingcartTotal - sitem.price;
+                for (var i in state.productList){
+                    var pitem = state.productList[i];
+                    if(sitem.key == pitem.key){
+                        pitem.left = pitem.left + 1;
+                        break;
+                    }
+                }
                 break;
             }
         }

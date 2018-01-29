@@ -7,6 +7,8 @@ import Count from '@/pages/Count'
 import C2F from '@/pages/C2F'
 import TodoList from '@/pages/TodoList'
 import Login from '@/pages/Login'
+import ShoppingCart from '@/pages/ShoppingCart'
+
 Vue.use(Router)
 
 export default new Router({
@@ -52,6 +54,12 @@ export default new Router({
       name: 'Login',
       component: Login,
       meta: { requiresAuth: false } // 不需驗證
+    },
+    {
+      path: '/ShoppingCart',
+      name: 'ShoppingCart',
+      component: ShoppingCart,
+      meta: { requiresAuth: true } // 不需驗證
     },
     {
       path: '/*',

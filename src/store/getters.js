@@ -12,3 +12,11 @@ export const getDoneList = state => { return state.todoList.filter((item) => {
 export const getLearnList = state => { return state.learnList };
 
 export const getIsLoading = state => { return state.isLoading };
+
+export const getShoppingCartList = state => { return state.shoppingcartList };
+
+export const getProductList = state => { return state.productList };
+
+export const getShoppingCartListTotal = state => { return state.shoppingcartList.length };
+
+export const getShoppingCartTotal = state => { return state.shoppingcartTotal };

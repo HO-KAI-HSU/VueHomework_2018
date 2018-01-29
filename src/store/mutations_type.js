@@ -11,3 +11,6 @@ export const DELETETODO = 'DELETETODO';
 export const LOADING = 'LOADING';
 
 export const SETTOKEN = 'SETTOKEN';
+
+export const ADDCART = 'ADDCART';
+export const CANCELCART = 'CANCELCART';

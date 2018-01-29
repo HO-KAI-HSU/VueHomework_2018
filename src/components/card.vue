@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import card from './card'
 export default {
   props: {
      citem: Object

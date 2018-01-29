@@ -63,3 +63,13 @@ export const actionLogin = ({ commit }, obj) => {
         }, 1500);
     })
 }
+
+export const actionAddCart = ({ commit }, key) => {
+    console.log('actionAddCart');
+    commit(types.ADDCART, key);
+}
+
+export const actionCancelCart = ({ commit }, key) => {
+    console.log('actionAddCart');
+    commit(types.CANCELCART, key);
+}

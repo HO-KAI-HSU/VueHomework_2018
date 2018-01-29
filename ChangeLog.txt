@@ -51,3 +51,7 @@ Add Login.vue page and test
 
 Modify login page and add router auth function
 ====================
+2018-01-29
+
+Add ShoppingCart page and by VUEX
+====================
