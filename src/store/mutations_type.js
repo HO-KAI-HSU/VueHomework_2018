@@ -9,3 +9,5 @@ export const TOGGLETODO = 'TOGGLETODO';
 export const DELETETODO = 'DELETETODO';
 
 export const LOADING = 'LOADING';
+
+export const SETTOKEN = 'SETTOKEN';

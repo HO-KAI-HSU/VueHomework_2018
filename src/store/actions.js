@@ -44,15 +44,16 @@ export const actionDeleteTodo = ({ commit }, key) => {
 export const actionToggleTodo = ({ commit }, obj) => {
     console.log('actionToggleTodo');
     commit(types.TOGGLETODO, obj);
-},
+}
 
-export const actionLogin = ({ commit }, { email, password }) => {
+export const actionLogin = ({ commit }, obj) => {
     console.log("actionLogin");
-    commit(types.LOADING, type);
+    commit(types.LOADING, true);
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            if (email === 'vue@foxconn.com' && password === 'foxconn') {
+            if (obj.email === 'george@foxconn.com' && obj.password === 'foxconn') {
                 console.log('Promise resolve');
+                commit(types.SETTOKEN, '333458');
                 commit(types.LOADING, false);
                 resolve();
             }else{

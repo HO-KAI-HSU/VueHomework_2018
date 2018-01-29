@@ -26,12 +26,20 @@ export const state = {
             info: 'Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
             btntext: 'View details »'
         } 
-    ]   
+    ],
+    isloading : false,
+    token: ''
 }
 
 let todoKey = state.todoList.length;
 
 export const mutations = {
+    [types.SETTOKEN] (state, token) {
+        state.token = token;
+    },
+    [types.LOADING] (state, IsLoading) {
+        state.isloading = IsLoading;
+    },
     [types.INCREASE] (state, num) {
         state.count += parseInt(num);
     },

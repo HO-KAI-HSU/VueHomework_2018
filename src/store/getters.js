@@ -10,3 +10,5 @@ export const getDoneList = state => { return state.todoList.filter((item) => {
 })};
 
 export const getLearnList = state => { return state.learnList };
+
+export const getIsLoading = state => { return state.isLoading };
