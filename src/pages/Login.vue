@@ -34,7 +34,6 @@ export default {
           // 使用 $router.push 轉跳到 hello Page
           this.$router.push('/hello');
         }, 1000);
-
       })
       .catch(() => { // 接收 reject
         console.log('error get Promise reject!');
