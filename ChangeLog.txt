@@ -47,4 +47,7 @@ Modify LearnComponent page by component method
 
 Add Login.vue page and test  
 ====================
+2018-01-29
 
+Modify login page and add router auth function
+====================
