@@ -55,3 +55,13 @@ Modify login page and add router auth function
 
 Add ShoppingCart page and by VUEX
 ====================
+2018-01-30
+
+Modify Vuex store
+====================
+2018-01-31
+
+1.Modify Vuex store by module methods
+2.Modify todolist page table with bootstrap
+3.Modify shoppingcart page table with bootstrap
+====================

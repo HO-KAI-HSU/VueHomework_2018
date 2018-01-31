@@ -3,36 +3,48 @@ import Vue from 'vue'
 
 
 const types = {
-    INCREASE = 'INCREASE',
-    DECREASE = 'DECREASE',
-    MULTIPLICATION = 'MULTIPLICATION',
-    RESET = 'RESET'
+    ADDTODO: 'ADDTODO',
+    UPDATETODO: 'UPDATETODO',
+    TOGGLETODO: 'TOGGLETODO',
+    DELETETODO: 'DELETETODO'
 }
 
+
+const state = {
+    todoList: [
+        { key: 0, content: 'vue.js 2.0', done: true },
+        { key: 1, content: 'vue.js 2.0', done: true },
+        { key: 2, content: 'vue-router 2.0', done: false },
+        { key: 3, content: 'vue-resource 2.0', done: false },
+        { key: 4, content: 'webpack', done: false }
+    ],
+}
+let todoKey = state.todoList.length;
+
 const actions = {
-    actionAddTodo = ({ commit }, todo) => {
+    actionAddTodo ({ commit }, todo) {
         console.log('actionAddTodo');
         commit(types.ADDTODO, todo);
     },    
-    actionUpdateTodo = ({ commit }, obj) => {
+    actionUpdateTodo ({ commit }, obj) {
         console.log('actionUpdateTodo');
         commit(types.UPDATETODO, obj);
     },   
-    actionDeleteTodo = ({ commit }, key) => {
+    actionDeleteTodo ({ commit }, key) {
         console.log('actionDeleteTodo');
         commit(types.DELETETODO, key);
     },   
-    actionToggleTodo = ({ commit }, obj) => {
+    actionToggleTodo ({ commit }, obj) {
         console.log('actionToggleTodo');
         commit(types.TOGGLETODO, obj);
     }
 }
 
 const getters = {
-    getTodoList = state => state.todoList.filter((item) => {
+    getTodoList: state => state.todoList.filter((item) => {
         return !item.done;
     }),
-    getDoneList = state => state.todoList.filter((item) => {
+    getDoneList: state => state.todoList.filter((item) => {
         return item.done;
     })
 }
@@ -78,18 +90,10 @@ const mutations = {
     }
 }
 
-const state = {
-    todoList: [
-        { key: 0, content: 'vue.js 2.0', done: true },
-        { key: 1, content: 'vue.js 2.0', done: true },
-        { key: 2, content: 'vue-router 2.0', done: false },
-        { key: 3, content: 'vue-resource 2.0', done: false },
-        { key: 4, content: 'webpack', done: false }
-    ]
-}
-let todoKey = state.todoList.length;
+
 
 export default {
+    namespced: true,
     state,
     actions,
     getters,

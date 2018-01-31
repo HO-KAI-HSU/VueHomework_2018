@@ -1,9 +1,11 @@
 <template>
   <li>
     <div v-if="!IsEditMode">
-      <customcheckbox v-bind:customitem="todoitem" @actionToggleTodo1="actionToggleTodo"></customcheckbox>
-      <button @click="showEditMode">修改</button>
-      <button @click="actionDeleteTodo( todoitem.key )">刪除</button>
+      <label>
+        <customcheckbox v-bind:customitem="todoitem" @actionToggleTodo1="actionToggleTodo"></customcheckbox>
+      </label>
+        <button @click="showEditMode" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+        <button @click="actionDeleteTodo( todoitem.key )" class="btn btn-xs btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
     </div> 
 
     <div v-if="IsEditMode">

@@ -3,26 +3,26 @@ import Vue from 'vue'
 
 
 const types = {
-    ADDTODO = 'ADDTODO',
-    UPDATETODO = 'UPDATETODO',
-    TOGGLETODO = 'TOGGLETODO',
-    DELETETODO = 'DELETETODO'
+    INCREASE: 'INCREASE',
+    DECREASE: 'DECREASE',
+    MULTIPLICATION: 'MULTIPLICATION',
+    RESET: 'RESET'
 }
 
 const actions = {
-    actionIncrease = ({ commit }, num) => {
+    actionIncrease ({ commit }, num) {
         console.log("actionIncrease");
         commit(types.INCREASE, num);
     },   
-    actionDecrease = ({ commit }, num) => {
+    actionDecrease ({ commit }, num) {
         console.log('actionDecrease');
         commit(types.DECREASE, num);
     },   
-    actionMultiplication = ({ commit }, num) => {
+    actionMultiplication ({ commit }, num) {
         console.log('actionMultiplication');
         commit(types.MULTIPLICATION, num);
     }, 
-    actionCountReset = ({ commit }) => {
+    actionCountReset ({ commit }) {
         console.log('actionCountReset');
         commit(types.RESET);
     }
@@ -52,6 +52,7 @@ const state = {
 }
 
 export default {
+    namespced: true,
     state,
     actions,
     getters,
