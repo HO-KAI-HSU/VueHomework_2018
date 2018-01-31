@@ -19,4 +19,10 @@ export const getProductList = state => { return state.productList };
 
 export const getShoppingCartListTotal = state => { return state.shoppingcartList.length };
 
-export const getShoppingCartTotal = state => { return state.shoppingcartTotal };
+export const getShoppingCartTotal = state =>  {    
+    var total = 0;
+    for (var i in state.shoppingcartList) {
+        total = total + state.shoppingcartList[i].price;
+    }
+    return total;
+};

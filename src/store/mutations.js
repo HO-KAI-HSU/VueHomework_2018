@@ -73,8 +73,7 @@ export const state = {
             price: 19900,
         }   
     ],
-    shoppingcartList: [],
-    shoppingcartTotal : 0
+    shoppingcartList: []
 }
 
 let todoKey = state.todoList.length;
@@ -137,35 +136,46 @@ export const mutations = {
         }
     },
     [types.ADDCART] (state, key) {
-        for (var i in state.productList){
-            var item = state.productList[i];
-            if(item.key == key){
-                state.shoppingcartList.push({
-                    key: item.key,
-                    title: item.title,
-                    price: item.price
-                });
-                item.left = item.left - 1;
-                state.shoppingcartTotal = state.shoppingcartTotal + item.price;
-                break;
-            }
-        }
+        var pitem = state.productList.find( item => item.key === key );
+        state.shoppingcartList.push({
+            key: pitem.key,
+            title: pitem.title,
+            price: pitem.price
+        });
+        pitem.left = pitem.left - 1;
+        // for (var i in state.productList){
+        //     var item = state.productList[i];
+        //     if(item.key == key){
+        //         state.shoppingcartList.push({
+        //             key: item.key,
+        //             title: item.title,
+        //             price: item.price
+        //         });
+        //         item.left = item.left - 1;
+        //         state.shoppingcartTotal = state.shoppingcartTotal + item.price;
+        //         break;
+        //     }
+        // }
     },
     [types.CANCELCART] (state, key) {
-        for (var i in state.shoppingcartList){
-            var sitem = state.shoppingcartList[i];
-            if(sitem.key == key){
-                state.shoppingcartList.splice(i, 1);
-                state.shoppingcartTotal = state.shoppingcartTotal - sitem.price;
-                for (var i in state.productList){
-                    var pitem = state.productList[i];
-                    if(sitem.key == pitem.key){
-                        pitem.left = pitem.left + 1;
-                        break;
-                    }
-                }
-                break;
-            }
-        }
+        var sitem = state.shoppingcartList.findIndex( item => item.key === key );
+        state.shoppingcartList.splice(sitem, 1);
+        var pitem = state.productList.find( item => item.key === key );
+        pitem.left += 1;
+        // for (var i in state.shoppingcartList){
+        //     var sitem = state.shoppingcartList[i];
+        //     if(sitem.key == key){
+        //         state.shoppingcartList.splice(i, 1);
+        //         state.shoppingcartTotal = state.shoppingcartTotal - sitem.price;
+        //         for (var i in state.productList){
+        //             var pitem = state.productList[i];
+        //             if(sitem.key == pitem.key){
+        //                 pitem.left = pitem.left + 1;
+        //                 break;
+        //             }
+        //         }
+        //         break;
+        //     }
+        // }
     }
 }
